@@ -1,0 +1,12 @@
+init.rc(android442\device\fsl\qiyang_6dq\init.rc):
+on fs
+    mount_all /fstab.freescale
+
+keywords.h(android442\system\core\init\keywords.h)：
+KEYWORD(mount_all,   COMMAND, 1, do_mount_all)
+分析：
+fstab.freescale文件是do_mount_all的传入参数
+mount_all /fstab.freescale命令对应的函数是do_mount_all
+
+builtins.c(android442\system\core\init\builtins.c):
+do_mount_all
